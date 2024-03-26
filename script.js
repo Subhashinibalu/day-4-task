@@ -145,17 +145,16 @@ const rotateArray = function(arr, k) {
 
 // capitalizing first letter of string in array
 
-const capital = (function(str){
+(function(str){
     for(var i=0; i<str.length;i++)
     {
         str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
      
     }
 
-    return str;
+    console.log(str);
 
- })
- console.log(capital(["subha","nila","mahi"]));
+ })(["subha","nila","mahi"]);
 
 
  //sum of an array
@@ -171,38 +170,43 @@ let save = 0;
 
 // to print all the prime
 
-let ar =[1,2,3,4,5,6,7,8]
 
-const prime = (function(ar) {
-    for (let ind = 2; ar > ind; ind++) {
-      if (ar % ind === 0) {
-        return false;
-      }
+(function(val){
+    for (let i = 0; i <= val.length; i++) {
+    let fl = 0;
+    for (let j = 2; j < val[i]; j++) {
+        if (val[i] % j == 0) {
+            fl = 1;
+            break;
+        }
     }
-    
-     return ar>1;
 
-  })
-  console.log(ar.filter(prime));
+    
+    if (val[i] > 1 && fl == 0) {
+        console.log(val[i]);
+    }
+}
+})([1,2,3,4,5,6,7]);
 
 
   
   // print the palindrome
 
-let st=["dad","cat","mom"];
 
-const palindrome = (function(st) {
-    for( let ind=0; ind<st.length; ind++){
-    let rev = "";
-    for (let i = st.length - 1; i >= 0; i--) {
-        rev += st[i];
+
+(function(st) {
+    
+        for(var key of st){
+            let rev = "";
+    for (let i = key.length - 1; i >= 0; i--){
+        rev += key[i];
+
     }
-    if (rev == st) {
-        return st
+    if (rev == key) {
+        console.log(key);
     } 
-}
-})
-console.log(st.filter(palindrome));
+        }
+})(["mom","dad","boy"]);
 
 
 
